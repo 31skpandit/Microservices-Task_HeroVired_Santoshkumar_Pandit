@@ -1,0 +1,19 @@
+$ docker compose ps
+NAME              IMAGE                  STATUS                    PORTS
+gateway-service   repo-gateway-service   Up 25 seconds (healthy)   0.0.0.0:3003->3003/tcp, [::]:3003->3003/tcp
+order-service     repo-order-service     Up 39 seconds (healthy)   0.0.0.0:3002->3002/tcp, [::]:3002->3002/tcp
+product-service   repo-product-service   Up 39 seconds (healthy)   0.0.0.0:3001->3001/tcp, [::]:3001->3001/tcp
+user-service      repo-user-service      Up 39 seconds (healthy)   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+
+$ curl http://localhost:3000/users
+[{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Smith"}]
+$ curl http://localhost:3001/products
+[{"id":1,"name":"Laptop","price":999},{"id":2,"name":"Phone","price":699}]
+$ curl http://localhost:3002/orders
+[{"id":1,"userId":1,"productId":2,"timestamp":"2026-10-18T05:35:32.197Z"}]
+$ curl http://localhost:3003/api/users
+[{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Smith"}]
+$ curl http://localhost:3003/api/products
+[{"id":1,"name":"Laptop","price":999},{"id":2,"name":"Phone","price":699}]
+$ curl http://localhost:3003/api/orders
+[{"id":1,"userId":1,"productId":2,"timestamp":"2026-10-18T05:35:32.197Z"}]
