@@ -122,7 +122,12 @@ Note: the order service keeps orders in memory, so restarting it clears all orde
 
 ## Screenshots
 
-The [`screenshots/`](screenshots/) folder contains:
+**All four containers running in Docker Desktop:**
 
-- `test-output.txt`: output from `docker compose ps` and from each endpoint
-- Screenshots of Docker Desktop and the terminal with all four services running
+![Docker Desktop showing all four services running](screenshots/docker-desktop-containers-running.png)
+
+**Gateway returning users at `http://localhost:3003/api/users`:**
+
+![Gateway API users response in browser](screenshots/gateway-api-users-browser.png)
+
+The output from `docker compose ps` and from each endpoint is in [`screenshots/test-output.txt`](screenshots/test-output.txt).
