@@ -17,6 +17,7 @@ The gateway reaches the other services by their Compose service names (`http://u
 .
 ├── docker-compose.yml
 ├── README.md
+├── submission.zip               # assignment ZIP (submission/ layout)
 ├── screenshots/                 # proof the services run in Docker
 └── Microservices/
     ├── user-service/     (app.js, package.json, Dockerfile, .dockerignore)
